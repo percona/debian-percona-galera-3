@@ -1,0 +1,31 @@
+percona-xtradb-cluster-galera-3.x (3.8-3390-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Removed unnecessary line(S) from .lintian-overrides
+  * Added patch fix_garbd_stop.patch to address upstream issue where on package
+    rm, an attempt is made to stop garbd even if it not running, resulting in
+    an rm error.
+
+ -- George Ormond Lorch III <george.lorch@percona.com>  Mon, 01 Dec 2014 14:35:23 -0700
+
+percona-xtradb-cluster-galera-2.x (2.1-2) unstable; urgency=medium
+
+  * d/p/detect-atomic.patch: Add check to determine whether -latomic is required
+    for GCC atomic built-ins. 
+  * d/control: Limit to linux based architectures.
+
+ -- James Page <james.page@ubuntu.com>  Wed, 18 Jun 2014 17:41:14 +0100
+
+percona-xtradb-cluster-galera-2.x (2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/install,links: Install galera extension to /usr/lib/galera2,
+    symlink to /usr/lib.
+
+ -- James Page <jamespage@debian.org>  Mon, 19 May 2014 10:36:11 +0100
+
+percona-xtradb-cluster-galera-2.x (2.0-1) unstable; urgency=low
+
+  * Initial package (Closes: #734892).
+
+ -- James Page <jamespage@debian.org>  Mon, 10 Feb 2014 13:25:49 +0200
