@@ -34,8 +34,8 @@ override_dh_installinit-arch:
 	dh_installinit --name=garb -- defaults 18 22
 
 override_dh_strip:
-	dh_strip -ppercona-xtradb-cluster-galera-3.x --dbg-package=percona-xtradb-cluster-galera-3.x-dbg
-	dh_strip -ppercona-xtradb-cluster-garbd-3.x --dbg-package=percona-xtradb-cluster-garbd-3.x-dbg
+	dh_strip -ppercona-galera-3 --dbg-package=percona-galera-3-dbg
+	dh_strip -ppercona-galera-arbitrator-3 --dbg-package=percona-galera-arbitrator-3-dbg
 
 %:
 	dh $@ 
