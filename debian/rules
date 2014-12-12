@@ -38,6 +38,6 @@ override_dh_strip:
 	dh_strip -ppercona-galera-arbitrator-3 --dbg-package=percona-galera-arbitrator-3-dbg
 
 %:
-	dh $@ 
+	dh $@  --with systemd
 
 .PHONY: override_dh_strip override_dh_auto_build
