@@ -1,0 +1,30 @@
+--- a/garb/files/garb-systemd
++++ b/garb/files/garb-systemd
+@@ -2,7 +2,14 @@
+ #
+ 
+ 
+-config=/etc/sysconfig/garb
++if [ -f /etc/sysconfig/garb ]; then
++    config=/etc/sysconfig/garb
++elif [ -f /etc/default/garb ]; then
++    config=/etc/default/garb
++else
++    log_failure "Garbd configuration file not found"
++    return 6
++fi
+ 
+ log_failure() {
+     echo " ERROR! $@"
+--- a/garb/files/garb.service
++++ b/garb/files/garb.service
+@@ -10,7 +10,8 @@ Alias=garbd.service
+ 
+ [Service]
+ User=nobody
+-EnvironmentFile=/etc/sysconfig/garb
++EnvironmentFile=-/etc/sysconfig/garb
++EnvironmentFile=-/etc/default/garb
+ ExecStart=/usr/bin/garb-systemd start
+ 
+ TimeoutSec=2m
