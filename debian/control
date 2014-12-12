@@ -33,8 +33,8 @@ Package: percona-xtradb-cluster-garbd-3.x
 Architecture: any
 Provides: garbd-3, garbd3
 Conflicts: garbd-2, garbd2, percona-xtradb-cluster-garbd-2.x
-Breaks: percona-xtradb-cluster-galera-2.x
-Replaces: percona-xtradb-cluster-galera-2.x
+Breaks: percona-xtradb-cluster-garbd-2.x
+Replaces: percona-xtradb-cluster-garbd-2.x
 Depends: netcat-openbsd, ${misc:Depends}, ${shlibs:Depends}
 Description: Garbd components of Percona XtraDB Cluster
  This package contains the garbd of Percona XtraDB Cluster.

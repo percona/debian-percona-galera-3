@@ -103,17 +103,17 @@ License: BSD-3-clause
   *
   * Copyright (c) 2004-2006 Intel Corporation - All Rights Reserved
   *
-  * This software program is licensed subject to the BSD License, 
+  * This software program is licensed subject to the BSD License,
   * available at http://www.opensource.org/licenses/bsd-license.html
   *
   * Abstract: The main routine
-  * 
+  *
   --*/
 
 Files: debian/*
 Copyright: 2014, Percona LLC and/or its affiliates
 License: GPL-2
- 
+
 License: GPL-2
  On Debian based systems the full text of the GNU General Public License version
  2 can be found in the file `/usr/share/common-licenses/GPL-2`.
