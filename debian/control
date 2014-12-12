@@ -18,14 +18,15 @@ Vcs-Browser: http://github.com/percona/galera.git
 
 Package: percona-galera-3
 Architecture: any
-Conflicts: garbd-2,
-           garbd2,
-           galera-3,
-           percona-xtradb-cluster-galera,
-           percona-xtradb-cluster-galera-2.x,
-           percona-xtradb-cluster-galera-3.x,
-           percona-xtradb-cluster-garbd-2.x,
-           percona-xtradb-cluster-garbd-3.x
+Conflicts: galera-3
+Breaks: percona-xtradb-cluster-galera-2.x,
+        percona-xtradb-cluster-galera-3.x,
+        percona-xtradb-cluster-garbd-2.x,
+        percona-xtradb-cluster-garbd-3.x
+Replaces: percona-xtradb-cluster-galera-2.x,
+          percona-xtradb-cluster-galera-3.x,
+          percona-xtradb-cluster-garbd-2.x,
+          percona-xtradb-cluster-garbd-3.x
 Provides: galera-3, percona-xtradb-cluster-galera-25
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Galera replication framework for Percona XtraDB Cluster
@@ -38,9 +39,13 @@ Description: Galera replication framework for Percona XtraDB Cluster
 
 Package: percona-galera-arbitrator-3
 Architecture: any
-Conflicts: garbd-2, garbd2, percona-xtradb-cluster-garbd-2.x
-Breaks: percona-xtradb-cluster-galera-2.x
-Replaces: percona-xtradb-cluster-galera-2.x
+Conflicts: garbd-2, garbd2
+Breaks: percona-xtradb-cluster-galera-2.x,
+        percona-xtradb-cluster-garbd-2.x,
+        percona-xtradb-cluster-garbd-3.x
+Replaces: percona-xtradb-cluster-galera-2.x,
+          percona-xtradb-cluster-garbd-2.x,
+          percona-xtradb-cluster-garbd-3.x
 Depends: netcat-openbsd, ${misc:Depends}, ${shlibs:Depends}
 Description: Galera arbitrator daemon for Percona XtraDB Cluster
  Galera is a fast synchronous multimaster wsrep provider (replication engine)
@@ -55,8 +60,7 @@ Package: percona-galera-3-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: percona-galera-3 (= ${binary:Version}),
-         ${misc:Depends}
+Depends: percona-galera-3 (= ${binary:Version}), ${misc:Depends}
 Description: debugging symbols for percona-galera-3
  This package contains the debugging symbols for percona-galera-3.
 
@@ -64,7 +68,6 @@ Package: percona-galera-arbitrator-3-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: percona-galera-arbitrator-3 (= ${binary:Version}),
-         ${misc:Depends}
+Depends: percona-galera-arbitrator-3 (= ${binary:Version}), ${misc:Depends}
 Description: debugging symbols for percona-galera-arbitrator-3
  This package contains the debugging symbols for percona-galera-arbitrator-3.
