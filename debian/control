@@ -6,7 +6,7 @@ Uploaders: George Ormond Lorch III <george.lorch@percona.com>,
            Alexey Bychko <alexey.bychko@percona.com>,
            Tomislav Plavcic <tomislav.plavcic@percona.com>
 Build-Depends: check,
-               debhelper (>= 7.0.50~),
+               debhelper (>= 9~),
                dh-systemd (>= 1.5),
                libboost-dev (>= 1.41),
                libboost-program-options-dev (>= 1.41),
