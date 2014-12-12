@@ -9,6 +9,10 @@ percona-galera-3 (3.8-3390-1) unstable; urgency=medium
 
   [ James Page ]
   * Rename package inline with agreed package naming for Galera variants.
+  * Bump debhelper compat level to 9.
+  * Drop symlink for defaults file, no longer required.
+  * Correct path to garb defaults file, refresh existing patches.
+  * Enable support for systemd.
 
  -- George Ormond Lorch III <george.lorch@percona.com>  Mon, 01 Dec 2014 14:35:23 -0700
 
