@@ -18,12 +18,13 @@ Vcs-Browser: http://github.com/percona/galera.git
 
 Package: percona-galera-3
 Architecture: any
-Conflicts: galera-3
-Breaks: percona-xtradb-cluster-galera-2.x,
+Breaks: galera-3,
+        percona-xtradb-cluster-galera-2.x,
         percona-xtradb-cluster-galera-3.x,
         percona-xtradb-cluster-garbd-2.x,
         percona-xtradb-cluster-garbd-3.x
-Replaces: percona-xtradb-cluster-galera-2.x,
+Replaces: galera-3,
+          percona-xtradb-cluster-galera-2.x,
           percona-xtradb-cluster-galera-3.x,
           percona-xtradb-cluster-garbd-2.x,
           percona-xtradb-cluster-garbd-3.x
@@ -40,12 +41,15 @@ Description: Galera replication framework for Percona XtraDB Cluster
 Package: percona-galera-arbitrator-3
 Architecture: any
 Conflicts: garbd-2, garbd2
-Breaks: percona-xtradb-cluster-galera-2.x,
+Breaks: galera-arbitrator-3, 
+        percona-xtradb-cluster-galera-2.x,
         percona-xtradb-cluster-garbd-2.x,
         percona-xtradb-cluster-garbd-3.x
-Replaces: percona-xtradb-cluster-galera-2.x,
+Replaces: galera-arbitrator-3,
+          percona-xtradb-cluster-galera-2.x,
           percona-xtradb-cluster-garbd-2.x,
           percona-xtradb-cluster-garbd-3.x
+Provides: galera-arbitrator-3
 Depends: netcat-openbsd, ${misc:Depends}, ${shlibs:Depends}
 Description: Galera arbitrator daemon for Percona XtraDB Cluster
  Galera is a fast synchronous multimaster wsrep provider (replication engine)
