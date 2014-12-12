@@ -1,10 +1,14 @@
-percona-xtradb-cluster-galera-3.x (3.8-3390-1) unstable; urgency=medium
+percona-galera-3 (3.8-3390-1) unstable; urgency=medium
 
+  [ George Ormond Lorch III ]
   * New upstream version.
   * Removed unnecessary line(S) from .lintian-overrides
   * Added patch fix_garbd_stop.patch to address upstream issue where on package
     rm, an attempt is made to stop garbd even if it not running, resulting in
     an rm error.
+
+  [ James Page ]
+  * Rename package inline with agreed package naming for Galera variants.
 
  -- George Ormond Lorch III <george.lorch@percona.com>  Mon, 01 Dec 2014 14:35:23 -0700
 
