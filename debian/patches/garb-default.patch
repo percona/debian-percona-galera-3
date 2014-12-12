@@ -1,0 +1,15 @@
+Description: Update path to default file
+Author: James Page <james.page@ubuntu.com>
+Forwarded: no
+
+--- a/garb/files/garb.sh
++++ b/garb/files/garb.sh
+@@ -27,7 +27,7 @@ if [ -f /etc/redhat-release ]; then
+ 	config=/etc/sysconfig/garb
+ else
+ 	. /lib/lsb/init-functions
+-	config=/etc/default/garbd
++	config=/etc/default/garb
+ fi
+ 
+ log_failure() {
