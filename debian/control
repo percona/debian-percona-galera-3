@@ -11,7 +11,7 @@ Build-Depends: check,
                libboost-program-options-dev (>= 1.41),
                libssl-dev,
                scons (>= 2)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://www.percona.com/software/percona-xtradb-cluster
 Vcs-Git: git://github.com/percona/galera.git
 Vcs-Browser: http://github.com/percona/galera.git
