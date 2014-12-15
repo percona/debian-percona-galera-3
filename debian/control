@@ -6,12 +6,13 @@ Uploaders: George Ormond Lorch III <george.lorch@percona.com>,
            Alexey Bychko <alexey.bychko@percona.com>,
            Tomislav Plavcic <tomislav.plavcic@percona.com>
 Build-Depends: check,
-               debhelper (>= 7.0.50~),
+               debhelper (>= 9~),
+               dh-systemd (>= 1.5),
                libboost-dev (>= 1.41),
                libboost-program-options-dev (>= 1.41),
                libssl-dev,
                scons (>= 2)
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://www.percona.com/software/percona-xtradb-cluster
 Vcs-Git: git://github.com/percona/galera.git
 Vcs-Browser: http://github.com/percona/galera.git

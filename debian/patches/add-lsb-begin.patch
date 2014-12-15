@@ -1,0 +1,10 @@
+--- a/garb/files/garb.sh
++++ b/garb/files/garb.sh
+@@ -7,6 +7,7 @@
+ # chkconfig: - 99 01
+ # config: /etc/sysconfig/garb | /etc/default/garb
+ #
++### BEGIN INIT INFO
+ # Provides:          garb
+ # Required-Start:    $remote_fs $syslog
+ # Required-Stop:     $remote_fs $syslog
