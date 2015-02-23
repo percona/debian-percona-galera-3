@@ -1,3 +1,10 @@
+percona-galera-3 (3.8-3390-2) unstable; urgency=medium
+  [ George Ormond Lorch III ]
+  * From Robie Basak @ Canonical, added distro patch to fix FTB on non-intel
+    platforms.
+
+ -- George Ormond Lorch III <george.lorch@percona.com>  Mon, 01 Dec 2014 14:35:23 -0700
+
 percona-galera-3 (3.8-3390-1) unstable; urgency=medium
 
   [ George Ormond Lorch III ]

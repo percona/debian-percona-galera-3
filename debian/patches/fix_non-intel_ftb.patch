@@ -1,0 +1,54 @@
+From: Robie Basak
+Description: Fixes SCons files to allow building on non-intel architectures.
+Bug: https://jira.percona.com/browse/PXC-326
+
+--- a/SConstruct
++++ b/SConstruct
+@@ -24,10 +24,11 @@
+ print 'Host: ' + sysname + ' ' + machine + ' ' + bits
+ 
+ x86 = 0
+-if bits == '32bit':
+-    x86 = 32
+-elif bits == '64bit':
+-    x86 = 64
++if machine in ['i386', 'x86_64']:
++    if bits == '32bit':
++        x86 = 32
++    elif bits == '64bit':
++        x86 = 64
+ 
+ 
+ #
+@@ -91,27 +92,10 @@
+ if dbug:
+     opt_flags = opt_flags + ' -DGU_DBUG_ON'
+ 
+-
+-if x86 == 32:
+-    compile_arch = ' -m32 -march=i686'
+-    link_arch    = compile_arch
+-    if sysname == 'linux':
+-        link_arch = link_arch + ' -Wl,-melf_i386'
+-elif x86 == 64 and sysname != 'sunos':
+-    compile_arch = ' -m64'
+-    link_arch    = compile_arch
+-    if sysname == 'linux':
+-        link_arch = link_arch + ' -Wl,-melf_x86_64'
+-elif machine == 'ppc64':
+-    compile_arch = ' -mtune=native'
+-    link_arch    = ''
+-elif sysname == 'sunos':
+-    compile_arch = ' -mtune=native'
+-    link_arch    = ''
+-else:
+-    compile_arch = ''
+-    link_arch    = ''
+-
++# No overriding of target architecture, instruction set or subset. The
++# distribution toolchain default knows best.
++compile_arch = ''
++link_arch    = ''
+ 
+ boost      = int(ARGUMENTS.get('boost', 1))
+ boost_pool = int(ARGUMENTS.get('boost_pool', 0))

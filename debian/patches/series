@@ -2,3 +2,4 @@ fix_garbd_stop.patch
 garb-default.patch
 add-lsb-begin.patch
 systemd-debian.patch
+fix_non-intel_ftb.patch
