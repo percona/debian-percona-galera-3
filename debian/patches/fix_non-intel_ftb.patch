@@ -1,6 +1,17 @@
-From: Robie Basak
-Description: Fixes SCons files to allow building on non-intel architectures.
-Bug: https://jira.percona.com/browse/PXC-326
+From: Robie Basak <robie.basak@canonical.com>
+Subject: Fix SCons files to allow building on non-Intel architectures.
+Forwarded: yes
+
+x86 seems to be expected to be non-zero on on Intel by code elsewhere, so make
+sure this happens. This fixes things like SSE instructions being requested on
+non-Intel architectures.
+
+Additionally, don't use -mtune or similar, since on a distribution build we
+want to use the distribution toolchain default unless there's a good reason to
+do otherwise. In particular, using -mtune=native on a builder would mean that
+you'd have to have a builder-equivalent machine to run the code on, whereas
+binary distributions are expected to work on all hardware supported by the
+distribution's toolchain defaults.
 
 --- a/SConstruct
 +++ b/SConstruct
@@ -20,7 +31,7 @@ Bug: https://jira.percona.com/browse/PXC-326
  
  
  #
-@@ -91,27 +92,10 @@
+@@ -91,27 +92,12 @@
  if dbug:
      opt_flags = opt_flags + ' -DGU_DBUG_ON'
  
@@ -45,8 +56,10 @@ Bug: https://jira.percona.com/browse/PXC-326
 -    compile_arch = ''
 -    link_arch    = ''
 -
-+# No overriding of target architecture, instruction set or subset. The
-+# distribution toolchain default knows best.
++# No overriding of target architecture, instruction set or subset. On a
++# distribution build, the distribution toolchain default knows best. We
++# certainly don't want to tie the built binaries to running only on the
++# builders.
 +compile_arch = ''
 +link_arch    = ''
  
