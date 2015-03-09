@@ -1,0 +1,22 @@
+From: George O. Lorch III <george.lorch@percona.com>
+Subject: chromium/build_config.h to allow building on arm64 architecture.
+Forwarded: yes
+
+Add in some architecture details for arm64 in chromium/build_config.h to
+allow basic compilation to proceed through macro tests.
+
+
+--- a/chromium/build_config.h
++++ b/chromium/build_config.h
+@@ -120,6 +120,11 @@
+ #define ARCH_CPU_32_BITS 1
+ #endif
+ #define ARCH_CPU_BIG_ENDIAN 1
++#elif defined (__aarch64__)
++#define ARCH_CPU_ARM_FAMILY 1
++#define ARCH_CPU_ARM 1
++#define ARCH_CPU_64_BITS 1
++#define ARCH_CPU_LITTLE_ENDIAN 1
+ #else
+ #error Please add support for your architecture in build/build_config.h
+ #endif
