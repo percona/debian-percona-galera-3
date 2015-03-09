@@ -1,0 +1,19 @@
+From: George O. Lorch III <george.lorch@percona.com>
+Subject: fix crc32c.h attempting to use intrinsics on i386.
+Forwarded: yes
+
+Fixed i386 builds attempting to use intrinsics for crc32. i386 should be using
+manual crc32 calculations and not non-existing instructions.
+
+
+--- a/www.evanjones.ca/crc32c.h
++++ b/www.evanjones.ca/crc32c.h
+@@ -40,7 +40,7 @@ uint32_t crc32cSlicingBy8(uint32_t crc, const void* data, size_t length);
+ #define CRC32C_x86_64
+ #endif
+ 
+-#if defined(CRC32C_x86_64) || defined(__i386) || defined(_M_X86)
++#if defined(CRC32C_x86_64)
+ #define CRC32C_x86
+ #endif
+ 

@@ -4,3 +4,4 @@ add-lsb-begin.patch
 systemd-debian.patch
 fix_non-intel_ftb.patch
 fix_arm64_ftb.patch
+fix_i386_ftb.patch
