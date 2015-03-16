@@ -16,6 +16,8 @@ percona-galera-3 (3.8-3390-1) UNRELEASED; urgency=medium
 
   [ Robie Basak ]
   * d/p/fix_non-intel_ftb.patch: fix FTBFS on non-Intel architectures.
+  * d/p/gu_rand-struct-holes.patch: correctly initialise gu_rse_t struct
+    (LP: #1430874).
 
  -- George Ormond Lorch III <george.lorch@percona.com>  Mon, 01 Dec 2014 14:35:23 -0700
 
