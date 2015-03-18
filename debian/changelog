@@ -3,9 +3,15 @@ percona-galera-3 (3.8-3390-1) UNRELEASED; urgency=medium
   [ George Ormond Lorch III ]
   * New upstream version.
   * Removed unnecessary line(S) from .lintian-overrides
-  * Added patch fix_garbd_stop.patch to address upstream issue where on package
-    rm, an attempt is made to stop garbd even if it not running, resulting in
-    an rm error.
+  * d/p/fix_garbd_stop.patch: Addresses upstream issue where on package rm,
+    an attempt is made to stop garbd even if it not running, resulting in an
+    rm error.
+  * d/p/fix_arm64_ftb.patch: Add in some architecture details for arm64 in
+    chromium/build_config.h to allow basic compilation to proceed through
+    macro tests.
+  * d/p/fix_i386_ftb.patch: Fixed i386 builds attempting to use intrinsics
+    for crc32. i386 should be using manual crc32 calculations and not
+    non-existing instructions.
 
   [ James Page ]
   * Rename package inline with agreed package naming for Galera variants.
